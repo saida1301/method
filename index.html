@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//1ci
+// the map method returns a new array by applying the callback function on each element of an array, while the forEach method doesn’t return anything.
+
+    //2ci
+    var min=7;
+    var max=11;
+    var random =
+    Math.floor(Math.random() * (max - min)) + +min;
+    console.log("Random Number : " + random );
+
+
+
+    //3
+let users = [
+  {
+    id: 1,
+    name: 'Saida',
+    surname: "Humbataliyeva",
+    age: 21
+  },
+  {
+    id: 3,
+    name: 'Nazrin',
+    surname: "Sixaliyeva",
+    age: 20
+  },
+  {
+    id: 2,
+    name: 'mahir',
+    surname: "yusifli",
+    age: 12
+  }
+]
+
+
+//3.1
+function addNewuser(id, name, surname, age) {
+  users.push({
+    id:  random,
+    name: name,
+    surname: surname,
+    age: age
+  })
+  console.log(users)
+}
+addNewuser(random, "Amil", "Rustemli",25)
+
+
+
+
+//3.2
+let filtearray=users.filter(a=>a.id in users);
+filtearray.forEach(function (element) {
+    console.log(element.name, element.surname);
+       
+    });
+    //3.3
+let filterarray=users.filter(a=>a.name === null);
+filterarray.forEach(function (element) {
+    console.log(element.id);
+       
+    });
+//3.4,3.8
+let filteredarray=users.filter(a=>a.age<18);
+filteredarray.forEach(function (element) {
+    console.log(element.name, element.surname);
+       
+    });
+//3.7
+let filtered_array=users.filter(a=>a.age >18);
+
+filtered_array.forEach(function (element) {
+    console.log(element.name, element.surname);
+       
+    });
+    //3.5
+    function capitalize(users) {
+    users.map(element => {        
+        if(element.name != null && element.surname != null) {
+            element.name = element.name.charAt(0).toUpperCase() + element.name.slice(1);
+            element.surname = element.surname.charAt(0).toUpperCase() + element.surname.slice(1);
+        }
+    });
+}
+
+capitalize(users);
+console.log(users); 
+</script>
+</html>
